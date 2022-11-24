@@ -1,0 +1,10 @@
+p:hover .exchange_name{
+    display: none;
+}
+
+ p .exchange_rate {
+    display: none;
+}
+p:hover .exchange_rate{
+    display: inline;
+}

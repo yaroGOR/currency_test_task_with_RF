@@ -1,0 +1,21 @@
+<form [formGroup]="formExchanger">
+    <label>Enter Amount Buy</label>
+    <input formControlName = 'amountBuy' />
+    <label> currency buy</label>
+    <select formControlName = 'currencyBuy' >
+        <option value=840 > USD</option>
+        <option value=978 > EUR</option>
+        <option value=980 > UAH</option>
+    </select>
+    <br/>
+
+    <label>Enter amount Sell</label>
+    <input formControlName = 'amountSell' />
+    <label>currency sell</label>
+    <select formControlName = 'currencySell'>
+        <option value='840' > USD</option>
+        <option value='978' > EUR</option>
+        <option value='980' > UAH</option>
+    </select>
+    <button type = 'submit'>submit</button>
+</form>
