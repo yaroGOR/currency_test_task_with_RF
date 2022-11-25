@@ -1,4 +1,4 @@
-<div class="w-full flex justify-center ">
+<div class="w-full flex justify-center">
   <div class="md:flex md:items-center mt-6">
     <form [formGroup]="formExchanger">
       <div class="items-center p-6 grid grid-cols-2 gap-4">
@@ -6,22 +6,22 @@
           <div class="md:w-1/2 m-2">
             <label>Amount to Buy</label>
           </div>
-          <input 
+          <input
             id="number"
             formControlName="amountBuyField"
-            placeholder="Enter amount of currency You want to buy"
+            placeholder="Enter amount "
             class="bg-gray-200 appearance-none border-2 border-gray-300 rounded-lg w-full py-2 px-4 text-gray-900 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
           />
           <div class="m-2">
-          <label >Currency to buy</label>
-          <select
-            formControlName="currencyBuyField"
-            class=" my-2 bg-gray-200 my-4 border-2 items-center border-gray-300 text-gray-900 text-sm rounded-lg focus:outline-none focus:bg-white focus:border-purple-500 block w-full p-2.5"
-          >
-            <option value="840">USD</option>
-            <option value="978">EUR</option>
-            <option value="980">UAH</option>
-          </select>
+            <label>Currency to buy</label>
+            <select
+              formControlName="currencyBuyField"
+              class="my-2 bg-gray-200 my-4 border-2 items-center border-gray-300 text-gray-900 text-sm rounded-lg focus:outline-none focus:bg-white focus:border-purple-500 block w-full p-2.5"
+            >
+              <option value="840">USD</option>
+              <option value="978">EUR</option>
+              <option value="980">UAH</option>
+            </select>
           </div>
         </div>
 
@@ -32,28 +32,30 @@
           <div>
             <input
               formControlName="amountSellField"
-              placeholder="Enter amount of currency You want to sell"
+              placeholder="Enter amount"
               class="bg-gray-200 appearance-none border-2 border-gray-300 rounded-lg w-full py-2 px-4 text-gray-900 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
             />
             <div></div>
           </div>
           <div class="m-2">
-
-          <label>Currency to sell</label>
-          <select
-            formControlName="currencySellField"
-            class="my-2 bg-gray-200 border-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:outline-none focus:bg-white focus:border-purple-500 block w-full p-2.5"
-          >
-            <option value="840">USD</option>
-            <option value="978">EUR</option>
-            <option value="980">UAH</option>
-          </select>
+            <label>Currency to sell</label>
+            <select
+              formControlName="currencySellField"
+              class="my-2 bg-gray-200 border-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:outline-none focus:bg-white focus:border-purple-500 block w-full p-2.5"
+            >
+              <option value="840">USD</option>
+              <option value="978">EUR</option>
+              <option value="980">UAH</option>
+            </select>
           </div>
         </div>
       </div>
 
       <div
-        *ngIf="(formExchanger.get('amountBuyField')?.hasError('pattern'))|| (formExchanger.get('amountSellField')?.hasError('pattern'))"
+        *ngIf="
+          formExchanger.get('amountBuyField')?.hasError('pattern') ||
+          formExchanger.get('amountSellField')?.hasError('pattern')
+        "
         class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
       >
         <p class="text-center">

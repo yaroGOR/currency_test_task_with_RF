@@ -22,8 +22,8 @@ export class FormComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {
     this.formExchanger = this.fb.group({
-      amountBuyField: ['', Validators.pattern("^[0-9.]*$")],
-      amountSellField: ['', Validators.pattern("^[0-9.]*$")],
+      amountBuyField: ['', Validators.pattern('^[0-9.]*$')],
+      amountSellField: ['', Validators.pattern('^[0-9.]*$')],
       currencyBuyField: '980',
       currencySellField: '980',
     });
@@ -55,7 +55,7 @@ export class FormComponent implements OnInit {
       }
     );
     this.formExchanger.valueChanges.subscribe((val) => {
-      console.log(val)
+      console.log(val);
       this.currencySearchResult = this.findCurrencyRecord(
         this.currencyBuy,
         this.currencySell
