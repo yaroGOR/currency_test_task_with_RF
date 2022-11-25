@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ICurr } from 'src/app/models/ICurr';
-
+import { Validators } from '@angular/forms';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -22,8 +22,8 @@ export class FormComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {
     this.formExchanger = this.fb.group({
-      amountBuyField: '',
-      amountSellField: '',
+      amountBuyField: ['', Validators.pattern("^[0-9.]*$")],
+      amountSellField: ['', Validators.pattern("^[0-9.]*$")],
       currencyBuyField: '980',
       currencySellField: '980',
     });
@@ -55,6 +55,7 @@ export class FormComponent implements OnInit {
       }
     );
     this.formExchanger.valueChanges.subscribe((val) => {
+      console.log(val)
       this.currencySearchResult = this.findCurrencyRecord(
         this.currencyBuy,
         this.currencySell
