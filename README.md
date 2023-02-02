@@ -1,4 +1,7 @@
 # Testtask2
+Demo: 
+
+https://magnificent-tapioca-bcea3e.netlify.app
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.9.
 Made with tailwind, angular and MonobankAPI
